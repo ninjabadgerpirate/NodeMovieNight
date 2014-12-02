@@ -1,0 +1,6 @@
+﻿{
+    "CorrectAnswerWorth": 5,
+    "IncorrectAnswerWorth": -3,
+    "MaxRounds": 8,
+    "AnswerOptions": 4
+}

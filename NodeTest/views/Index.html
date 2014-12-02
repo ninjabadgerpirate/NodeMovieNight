@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Welcome to Movie Night</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="Movie night is a fun movie trivia game">
+    <meta name="keywords" content="Movie Trivia">
+    <meta name="author" content="GianPiero Bresolin">
+    <script data-main="/scripts/App/Index.js" src="/scripts/require.js"></script>
+    <script src="/scripts/require-config.js"></script>
+    <script src='/scripts/faye-browser.js'></script>
+    <style type="text/css">
+        body {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body id="page-top">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-film"></span> Movie Night</a>
+
+            <p class="navbar-text navbar-right" id="ScoresHolder" style="display: none;">
+                Current Score: <span id="lblPlayerNameHeading">You</span> <span id="lblYourScore" class="badge">0</span> | <span id="lblOpponentNameHeading">Your opponent:</span> <span id="lblYourOponentsScore" class="badge">0</span>
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron" id="Player">
+            <h1>Hello there</h1>
+
+            <div class="row">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="PlayerName" class="col-sm-2 control-label">What's your name?</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="PlayerName" value="GianPiero" placeholder="Enter your name">
+                        </div>
+
+                        <button type="button" id="btnCreatePlayer" class="btn btn-default">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="jumbotron" id="Welcome" style="display:none">
+            <h1>Hey there <span id="lblPlayerName"></span>.</h1>
+            <h2>Welcome to Movie Night, would you like to</h2>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Start a new game?</h2>
+                    <div class="btn-group" role="group" aria-label="Start a new game">
+                        <button id="btnCreateNewGame" type="button" class="btn btn-default">New Game</button>
+                    </div>
+                </div>
+
+                <div class="col-md-8" id="CurrentRooms">
+                    <h2>Or you can join an existing game?</h2>
+                    <div id="CurrentRoomsHolder"></div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron" id="NoOpponent" style="display:none">
+            <div class="row">
+                <h2>You will need someone to play against</h2>
+                <p>
+                    Copy the URL below and send it to them.
+                </p>
+                <h2 id="RoomUrl"></h2>
+            </div>
+        </div>
+
+        <div class="jumbotron" id="Questions" style="display:none">
+            <div class="row">
+                <h2>What year did this movie come out?</h2>
+
+                <p>
+                    Round <span id="lblCurrentRound">1</span> of <span id="lblTotalRounds">0</span>
+                </p>
+
+                <div id="QuestionsHolder"></div>
+
+                <p class="bg-success" id="WaitingMessage">
+                    Just waiting for <span id="lblOpponentName"></span> to have their go.
+                </p>
+            </div>
+        </div>
+
+        <div class="jumbotron" id="Results" style="display:none">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>The results are in</h2>
+
+                    <div id="ResultsHolder"></div>
+                    <p>
+                        <a href="/" id="aReturn">Go back to the home page</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

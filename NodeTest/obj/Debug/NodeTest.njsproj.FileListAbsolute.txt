@@ -1,0 +1,2 @@
+C:\Users\GianPiero\Desktop\Google Drive\Projects\NodeTest\NodeTest\obj\Debug\NodeTest.njsprojResolveAssemblyReference.cache
+C:\Users\GianPiero\Desktop\Google Drive\Projects\NodeTest\NodeTest\bin\Microsoft.NodejsTools.WebRole.dll
